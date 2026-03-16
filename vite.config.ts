@@ -9,6 +9,16 @@ export default defineConfig({
     tailwindcss(),
   ],
   test: {
-    environment: 'jsdom',
+    globals: true,
+    environment: 'jsdom', // Use jsdom for browser environment simulation
+    setupFiles: './test_src/setupTests.ts', // Optional: for custom matchers
+    coverage: {
+      thresholds: {
+        branches: 80, // Example: enforce coverage thresholds
+        functions: 80,
+        lines: 80,
+        statements: 80,
+      },
+    },
   },
 })
