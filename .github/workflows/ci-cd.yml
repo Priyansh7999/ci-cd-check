@@ -74,8 +74,9 @@ jobs:
           - name: Deploy to Vercel Production
             id: deploy
             run: |
-                DEPLOYMENT_URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.CICD_TOKEN }})
-                echo "Deployed to: $DEPLOYMENT_URL"
+              DEPLOYMENT_URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.CICD_TOKEN }})
+              echo "deployment-url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+              echo "Deployed to: $DEPLOYMENT_URL"
             env:
               VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
               VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
