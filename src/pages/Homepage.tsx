@@ -1,3 +1,6 @@
+import Button from "../components/Button";
+import Label from "../components/Label";
+
 export default function Homepage() {
     const isloggedin=true;
   return (
@@ -8,7 +11,6 @@ export default function Homepage() {
             <div>
                 <button>Hello world</button>
             </div>
-            {isloggedin ? "helo":"world"}
         </div>
     )
 }

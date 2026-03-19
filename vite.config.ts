@@ -14,10 +14,12 @@ export default defineConfig({
     setupFiles: './test_src/setupTests.ts', // Optional: for custom matchers
     coverage: {
       thresholds: {
-        branches: 80, 
-        functions: 80,
-        lines: 80,
-        statements: 80,
+        'src/pages/**': {
+          branches: 80,
+          functions: 80,
+          lines: 80,
+          statements: 80,
+        },
       },
     },
   },

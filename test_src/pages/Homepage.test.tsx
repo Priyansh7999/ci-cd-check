@@ -16,7 +16,6 @@ const renderApp = () => {
 describe('app test', () => {
     test("app", async () => {
         renderApp()
-
         const element = await screen.findByText('Leave Management System')
         expect(element).toBeInTheDocument()
     })
