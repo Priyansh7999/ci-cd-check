@@ -1,8 +1,5 @@
-import Button from "../components/Button";
-import Label from "../components/Label";
 
 export default function Homepage() {
-    const isloggedin=true;
   return (
         <div>
             <p>Leave Management System</p>
