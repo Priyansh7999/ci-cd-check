@@ -37,47 +37,24 @@ jobs:
       needs: ci
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       runs-on: ubuntu-latest
+
       environment:
         name: production
         url: ${{ steps.deploy.outputs.deployment-url }}
+
       steps:
-          - name: Checkout Repository
-            uses: actions/checkout@v4
-          
-          - name: Set up Node
-            uses: actions/setup-node@v4
-            with:
-              node-version: '20'
-              cache: 'npm'
+        - name: Checkout Repository
+          uses: actions/checkout@v4
 
-          - name: Install dependencies
-            run: npm ci
-          
+        - name: Install Vercel CLI
+          run: npm install --global vercel@latest
 
-          - name: Install Vercel CLI
-            run: npm install --global vercel@latest
-
-          - name: Pull Vercel project settings
-            run: |
-              vercel pull --yes --environment=production --token=${{ secrets.CICD_TOKEN }}
-            env:
-              VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
-              VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
-
-          - name: Build via Vercel CLI
-            run: vercel build --prod --token=${{ secrets.CICD_TOKEN }}
-            env:
-              VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
-              VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
-
-              
-          - name: Deploy to Vercel Production
-            id: deploy
-            run: |
-              DEPLOYMENT_URL=$(vercel deploy --prebuilt --prod --token=${{ secrets.CICD_TOKEN }})
-              echo "deployment-url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
-              echo "Deployed to: $DEPLOYMENT_URL"
-            env:
-              VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
-              VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
- 
+        - name: Deploy to Vercel Production
+          id: deploy
+          run: |
+            DEPLOYMENT_URL=$(vercel deploy --prod --token=${{ secrets.CICD_TOKEN }})
+            echo "deployment-url=$DEPLOYMENT_URL" >> $GITHUB_OUTPUT
+            echo "Deployed to: $DEPLOYMENT_URL"
+          env:
+            VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
+            VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
