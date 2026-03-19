@@ -27,10 +27,11 @@ jobs:
               run: npx tsc --noEmit
             
             - name: Run frontend tests
-              run: npm test
+              run: npm run test:coverage
 
             - name: Build project
               run: npm run build
+            
     
     cd:
       name: Deploy to Vercel
