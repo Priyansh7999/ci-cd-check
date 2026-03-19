@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1773902300235" clover="3.2.0">
-  <project timestamp="1773902300235" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="2" classes="2"/>
-    <file name="App.css" path="/Users/technogise/Desktop/leavify-frontend/src/App.css">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-    </file>
-    <file name="App.tsx" path="/Users/technogise/Desktop/leavify-frontend/src/App.tsx">
+<coverage generated="1773904626002" clover="3.2.0">
+  <project timestamp="1773904626002" name="All files">
+    <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2" elements="8" coveredelements="7" complexity="0" loc="4" ncloc="4" packages="2" files="3" classes="3"/>
+    <package name="src">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-    </file>
+      <file name="App.css" path="/Users/technogise/Desktop/leavify-frontend/src/App.css">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="App.tsx" path="/Users/technogise/Desktop/leavify-frontend/src/App.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.pages">
+      <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="Homepage.tsx" path="/Users/technogise/Desktop/leavify-frontend/src/pages/Homepage.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
